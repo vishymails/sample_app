@@ -162,3 +162,43 @@ webapp_model_dir : prediction_service/model/model.joblib
 ```bash
 git add . &&  git commit -m "param.yaml file added "
 ```
+
+
+```bash
+
+git push -u origin main
+```
+
+
+
+UPDATE REQUIREMENTS.TXT
+
+```BASH
+
+dvc
+dvc[gdrive]
+scikit-learn
+pandas
+pytest
+tox
+flake8
+flask
+gunicorn
+
+
+```
+
+
+```BASH
+
+pip install -r requirements.txt
+
+```
+
+
+CREATE src/get_data.py
+
+```bash
+
+
+```
