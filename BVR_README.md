@@ -286,3 +286,68 @@ python src/load_data.py
 git add . &&  git commit -m "get_data.py and load_data.py got added"
 git push -u origin main
 ```
+
+
+UPDATE DVC.YAML 
+
+```BASH 
+
+stages :
+  load_data :
+    cmd : python src/load_data.py --config=params.yaml
+    deps :
+      - src/get_data.py
+      - src/load_data.py
+      - data_given/winequality.csv
+    outs :
+      - data/raw/winequality.csv
+
+```
+
+RUN 
+
+```BASH
+
+dvc repro
+
+git add . &&  git commit -m "dvc.yaml LOAD DATA SECTION GOT updated"
+git push -u origin main
+```
+
+
+UPDATE SPLIT_DATA SECTION IN DVC.YAML FILE
+
+```BASH
+
+stages :
+  load_data :
+    cmd : python src/load_data.py --config=params.yaml
+    deps :
+      - src/get_data.py
+      - src/load_data.py
+      - data_given/winequality.csv
+    outs :
+      - data/raw/winequality.csv
+
+  split_data :
+    cmd : python src/split_data.py --config=params.yaml
+    deps :
+      - src/split_data.py
+      - data/raw/winequality.csv
+    outs :
+      - data/processed/train_winequality.csv
+      - data/processed/test_winequality.csv
+
+
+
+```
+
+RUN 
+
+```BASH
+
+dvc repro
+
+git add . &&  git commit -m "dvc.yaml SPLIT DATA SECTION GOT updated"
+git push -u origin main
+```
