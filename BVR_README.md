@@ -86,4 +86,22 @@ https://drive.google.com/drive/folders/1xw0XX-WK74uxtFFLySbtnX-ODdmdK5Ec
 
 ```
 
+TRY BELOW COMMANDS 
+
+```BASH
+git init
+dvc init
+dvc add data_given/winequality.csv
+git add .
+git commit -m "first commit"
+
+```
+
+
+MULTIPLE COMMANDS IN SINGLE LINE 
+
+```bash
+git add . &&  git commit -m "bvr_readme.md file got updated"
+```
+
 
