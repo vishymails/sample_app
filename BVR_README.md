@@ -105,3 +105,60 @@ git add . &&  git commit -m "bvr_readme.md file got updated"
 ```
 
 
+COMMIT CHANGES TO REMOTE REPO
+
+```BASH
+
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/vishymails/sample_app.git
+git branch -M main
+git push -u origin main
+
+```
+
+
+CREATE PARAMS.YAML 
+
+```BASH
+
+base :
+  project : winequality-project
+  random_state : 42
+  target_col : TARGET
+
+data_source : 
+  s3_source : data_given/winequality.csv
+
+load_data :
+  raw_dataset_csv : data/raw/winequality.csv
+
+split_data :
+  train_path : data/processed/train_winequality.csv
+  test_path : data/processed/test_winequality.csv
+  test_size : 0.2
+
+estimators :
+  ElasticNet :
+    params :
+      # alpha : 0.88
+      # l1_ratio : 0.89
+      alpha : 0.9
+      l1_ratio : 0.4
+
+model_dir : saved_models
+
+reports :
+  params : report/params.json
+  scores : report/scores.json
+
+webapp_model_dir : prediction_service/model/model.joblib
+
+
+
+```
+
+
+```bash
+git add . &&  git commit -m "param.yaml file added "
+```
