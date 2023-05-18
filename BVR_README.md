@@ -862,6 +862,24 @@ class NotInRange(Exception) :
 
 
 raise NotInRange
+
+
+
+
+
+overview.loc[["min", "max" ]].to_dict()
+
+
+
+
+overview.loc[["min", "max" ]].to_json()
+
+
+
+
+overview.loc[["min", "max" ]].to_json("schema_in.json")
+
+# CREATES schema_in.json for further use
 ```
 
 ```BASH 
