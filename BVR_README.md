@@ -786,3 +786,17 @@ RUN
 tox 
 
 ```
+
+
+TO CREATE FINAL DISTRIBUTION FOR SHARING THE PROJECT WE CAN USE WHEEL 
+
+```BASH 
+
+tox
+pip install -e .
+pip freeze
+python setup.py sdist bdist_wheel
+
+LOOK IN TO dist FOLDER - YOU CAN FIND ZIP FILE + WHL FILE (SHARE THE SAME TO ALL WHO LIKES TO USE OR ENHANCE THE PROJECT)
+```
+
