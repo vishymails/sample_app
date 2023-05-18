@@ -654,3 +654,26 @@ dvc repro
 git add . &&  git commit -m "METRICS AND JSON FILE CREATED AND updated"
 git push -u origin main
 ```
+
+
+RUN TO SEE METRICS DIFFERENCE 
+
+
+```BASH 
+
+git add . && git commit -m "tracker added"
+git push origin main
+dvc params diff
+dvc metrics show
+dvc metrics diff
+dvc repro
+dvc metrics diff
+git add . && git commit -m "tracker added"
+git push origin main
+dvc metrics diff
+git add . && git commit -m "tracker added 2"
+git push origin main
+doskey /history
+
+```
+
