@@ -671,9 +671,47 @@ dvc metrics diff
 git add . && git commit -m "tracker added"
 git push origin main
 dvc metrics diff
+
+DO NOT COMMIT TRY BELOW COMMANDS 
+
+
+dvc metrics show
+dvc metrics diff
 git add . && git commit -m "tracker added 2"
 git push origin main
 doskey /history
 
 ```
+
+ENABLE PYTEST AND TOX FRAMEWORKS FOR TESTING PURPOSE - CREATE tox.ini FILE IN SAMPLE_APP FOLDER 
+
+```BASH 
+
+[tox]
+envlist = py38
+; skipsdist = True
+
+[testenv]
+deps = -rrequirements.txt
+commands =
+    pytest -v
+
+```
+
+
+CREATE NECESSARY FOLDERS AND FILES FOR SAMPLE TESTING 
+
+
+```BASH 
+
+mkdir tests
+
+ 16  cd tests 
+   17  cd ..
+   18  touch tests/conftest.py
+   19  touch tests/test_config.py
+   20  touch tests/__init__.py
+
+```
+
 
