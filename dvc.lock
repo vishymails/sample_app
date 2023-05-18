@@ -46,15 +46,15 @@ stages:
       size: 2855
     params:
       params.yaml:
-        estimators.ElasticNet.params.alpha: 0.88
-        estimators.ElasticNet.params.l1_ratio: 0.89
+        estimators.ElasticNet.params.alpha: 1.88
+        estimators.ElasticNet.params.l1_ratio: 0.9
     outs:
     - path: report/params.json
-      md5: 0568f34313ba7c5e55128b75dbcbee5c
-      size: 46
+      md5: 5ca3c92adb5af0b4d08b7db120847187
+      size: 45
     - path: report/scores.json
-      md5: ac89e037063ee307b6d23c8ef0583610
+      md5: 307024fdb4ab1797bc5f5a1f4ce36835
       size: 100
     - path: saved_models/model.joblib
-      md5: 758814454566051b22e6404aab660e30
+      md5: f3e65bd288596cc73a9065981c4d5147
       size: 1263
