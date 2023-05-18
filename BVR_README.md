@@ -1496,6 +1496,10 @@ if __name__ == "__main__":
 RUN 
 ```BASH 
 
+RERUN :
+ python app.py
+ 
+
 TEST http://localhost:5000 with proper range in the form 
 ```
 
