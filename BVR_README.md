@@ -800,3 +800,74 @@ python setup.py sdist bdist_wheel
 LOOK IN TO dist FOLDER - YOU CAN FIND ZIP FILE + WHL FILE (SHARE THE SAME TO ALL WHO LIKES TO USE OR ENHANCE THE PROJECT)
 ```
 
+
+
+CREATE NOTEBOOKS FOR TESTING SOME ROUGH NOTE CODE BEFORE USING
+
+```BASH
+
+pip install jupyterlab
+jupyter-lab notebooks/
+
+
+```
+
+
+```BASH
+
+import os
+import pandas as pd
+
+
+
+
+df = pd.read_csv("../data_given/winequality.csv")
+
+df.columns
+
+
+
+
+
+df.describe().T
+
+
+
+
+df.columns = [ '_'.join(col.split()) for col in df.columns]
+
+
+
+
+df.describe().T
+
+
+
+
+overview = df.describe()
+
+overview.loc[["min", "max" ]]
+
+
+
+
+
+class NotInRange(Exception) :
+    def __init__(self, message="value not in given range - by Oracle") :
+        self.message = message
+        super().__init__(self.message)
+        
+
+
+
+
+raise NotInRange
+```
+
+```BASH 
+
+git add . && git commit -m "NOTEBOOK FILE ADDED  "
+git push origin main
+
+```
+
