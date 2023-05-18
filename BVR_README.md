@@ -688,15 +688,65 @@ ENABLE PYTEST AND TOX FRAMEWORKS FOR TESTING PURPOSE - CREATE tox.ini FILE IN SA
 ```BASH 
 
 [tox]
-envlist = py38
+envlist = py39
 ; skipsdist = True
 
 [testenv]
 deps = -rrequirements.txt
-commands =
+commands = 
+
+    # stop the build if there are Python syntax errors or undefined names
+    flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+    # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+    flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
     pytest -v
 
 ```
+
+RUN 
+
+```BASH
+
+tox 
+
+OR 
+
+tox -R (this command will delete all libs and reload it once again)
+
+```
+
+
+IF DISTRIBUTION IS SUPPORTED THEN IT EXPECTS setup.py FILE 
+
+```BASH 
+
+under sample_app folder 
+
+touch setup.py
+
+```
+
+
+SETUP.PY 
+
+```bash 
+
+
+from setuptools import setup, find_packages
+
+setup(
+    name="src",
+    version="0.0.1",
+    description="Case study project for Oracle Blr",
+    author="BVR",
+    packages=find_packages(),
+    license="MIT"
+)
+
+
+```
+
 
 
 CREATE NECESSARY FOLDERS AND FILES FOR SAMPLE TESTING 
@@ -715,3 +765,24 @@ mkdir tests
 ```
 
 
+UPDATE test_config.py
+
+
+```bash 
+
+def test_generic() :
+    a = 30
+    b = 40
+
+    assert a == 30
+
+```
+
+
+RUN 
+
+```bash 
+
+tox 
+
+```

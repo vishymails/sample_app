@@ -1,3 +1,9 @@
+# INSTALL INHOUSE LOCAL PACKAGES 
+
+-e .
+
+# Third party packages 
+
 dvc
 dvc[gdrive]
 scikit-learn
